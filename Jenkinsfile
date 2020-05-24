@@ -4,14 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-		echo 'Building...'
-                ./gradlew build
+		script	{
+		   echo 'Building...'
+                   ./gradlew build
+		}
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-		./gradlew test
+		script	{
+                   echo 'Testing...'
+		   ./gradlew test
+		}
             }
         }
         stage('Deploy') {
