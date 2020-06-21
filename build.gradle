@@ -13,6 +13,18 @@ version = "2.36.0-beta-1"
 def dependentVersion = version
 def domaSpringBootVersion = "1.4.0"
 
+
+jacocoTestReport{
+    additionalSourceDirs.from = files(sourceSets.main.allJava.srcDirs)
+    reports {
+        html.enabled true
+        xml.enabled false
+        csv.enabled false
+        html.destination file("build/reports/jacoco/html")
+    }
+    executionData.from = files('build/jacoco/test.exec')
+}
+
 spotless {
     java {
         googleJavaFormat('1.7')
