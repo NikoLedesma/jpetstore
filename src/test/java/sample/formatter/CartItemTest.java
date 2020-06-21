@@ -1,14 +1,12 @@
 package sample.formatter;
 
+import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import sample.entity.Amount;
 import sample.entity.Item;
 import sample.model.CartItem;
-
-import java.math.BigDecimal;
-import java.util.Locale;
 
 public class CartItemTest {
 
@@ -24,10 +22,9 @@ public class CartItemTest {
     cartItem.setQuantity(10);
   }
 
-
   @Test
   public void testTotal() {
-    Amount totalAmount=cartItem.getTotal();
+    Amount totalAmount = cartItem.getTotal();
     Assert.assertEquals(new BigDecimal("255.00"), totalAmount.getValue());
   }
 
@@ -38,10 +35,7 @@ public class CartItemTest {
     cartItem.incrementQuantity();
     cartItem.incrementQuantity();
     cartItem.incrementQuantity();
-    Amount totalAmount=cartItem.getTotal();
+    Amount totalAmount = cartItem.getTotal();
     Assert.assertEquals(new BigDecimal("382.50"), totalAmount.getValue());
   }
-
-
-
 }
