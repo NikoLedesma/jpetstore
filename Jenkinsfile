@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script	{
                    echo 'Building...'
-                   sh './gradlew sonarqube -Dsonar.host.url=sonarqube:9000'
+                   sh './gradlew sonarqube -Dsonar.host.url=http://sonarqube:9000'
                 }
             }
         }
