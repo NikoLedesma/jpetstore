@@ -1,12 +1,13 @@
 package sample.formatter;
 
-import sample.entity.Inventory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import sample.entity.Inventory;
 
 public class InventoryTest {
-  private Inventory inventory ;
+  private Inventory inventory;
+
   @Before
   public void setUpFormater() {
     inventory = new Inventory();
