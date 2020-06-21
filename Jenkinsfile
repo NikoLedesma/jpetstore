@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script	{
                    echo 'Testing...'
-                   sh './gradlew -i test'
+                   sh './gradlew test'
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script	{
                    echo 'Building...'
-                   sh './gradlew sonarqube -Dsonar.host.url=http://sonarqube:9000'
+                   sh './gradlew jacocoTestReport sonarqube -Dsonar.host.url=http://sonarqube:9000'
                 }
             }
         }
