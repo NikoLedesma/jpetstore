@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script	{
                    echo 'Testing...'
-                   sh './gradlew -i test jacocoTestReport'
+                   sh './gradlew -i test'
                 }
             }
         }
