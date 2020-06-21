@@ -11,15 +11,6 @@ pipeline {
                 }
             }
         }
-        /******************ANALYZE**********************/
-        stage('Analyze') {
-            steps {
-                script	{
-                   echo 'Building...'
-                   sh './gradlew sonarqube -Dsonar.host.url=http://sonarqube:9000'
-                }
-            }
-        }
 
         /*******************TEST**********************/
         stage('Test') {
@@ -27,6 +18,16 @@ pipeline {
                 script	{
                    echo 'Testing...'
                    sh './gradlew test'
+                }
+            }
+        }
+
+        /******************ANALYZE**********************/
+        stage('Analyze') {
+            steps {
+                script	{
+                   echo 'Building...'
+                   sh './gradlew sonarqube -Dsonar.host.url=http://sonarqube:9000'
                 }
             }
         }
